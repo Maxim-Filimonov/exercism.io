@@ -1,30 +1,5 @@
-<div class="btn-group">
-  <button class="btn dropdown-toggle"
-    data-filter="<%= label.downcase %>"
-    data-label="<%= label %>"
-    data-selected="All"
-    data-toggle="dropdown">
-    <span class="filter-label"><%= label %></span>
-    <span class="caret"></span>
-  </button>
-
-  <ul class="dropdown-menu">
-    <li>
-      <a href="#" id="all-<%= label.downcase %>"
-        style="display:none"
-        data-action="set-filter"
-        data-target="button[data-filter='<%= label.downcase %>']">
-        All
-      </a>
-    </li>
-    <% options.each do |option| %>
-      <li>
-        <a href="#"
-          data-action="set-filter"
-          data-target="button[data-filter='<%= label.downcase %>']">
-          <%= option %>
-        </a>
-      </li>
-    <% end %>
-  </ul>
-</div>
+<select name="<%= label.downcase %>" title="<%= label %>" multiple ng-model="<%= label.downcase %>">
+  <% options.each do |option| %>
+    <option><%= option %></option>
+  <% end %>
+</select>

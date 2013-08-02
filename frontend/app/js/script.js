@@ -18,9 +18,16 @@ var MarkdownCtrl = function($scope, $http) {
     });
   };
 };
+
+var PendingCtrl = function($scope) {
+  $scope.filter = {};
+};
+
 //
 //TODO move all variable declaration to the tops of functions.
 $(function() {
+  $('.selectpicker').selectpicker();
+
   $(".pending-submission").each(function(index,element) {
     var elem = $(element);
 

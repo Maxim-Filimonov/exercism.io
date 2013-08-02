@@ -4,7 +4,8 @@
 <% end %>
 <% unless pending.empty? %>
   <h2>Needs Nitpicking</h2>
-  <div class="pending-submissions">
+  <div class="pending-submissions" ng-app="exercismModule">
+    <div ng-controller="PendingCtrl">
 
     <%= erb :filter_pending, locals: { label: 'User', options: users } %>
     <%= erb :filter_pending, locals: { label: 'Exercise', options: exercises } %>
@@ -21,9 +22,11 @@
     </label>
 
     <hr/>
+
     <% pending.each do |submission| %>
       <%= erb :pending_submission, locals: { submission: submission } %>
     <% end %>
 
+  </div>
   </div>
 <% end %>
