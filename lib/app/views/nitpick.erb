@@ -55,7 +55,17 @@
       <h2>Nitpicks</h2>
     <% end %>
 
+    <script type="text/ng-template" id="show-nit">
+      <p>show nit</p>
+    </script>
+
+    <script type="text/ng-template" id="edit-nit">
+      <p>edit nit</p>
+    </script>
+
     <% submission.nits.each do |nit| %>
+      <ng-view>
+      </ng-view>
       <%= erb :nit, locals: {nit: nit, submission: submission} %>
     <% end %>
 
